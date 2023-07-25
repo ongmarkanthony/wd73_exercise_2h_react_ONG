@@ -1,36 +1,27 @@
-import React from 'react'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import {useSelector, useDispatch} from 'react-redux'
-import JokeList from './components/Jokelist'
-import {fetchJokes} from './jokeActions';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import RegistrationForm from './pages/registration'; 
+import Profile from './pages/profile';
+import DocumentUpload from './pages/documentUpload'; 
+import TaskCheckList from './pages/taskCheckList'; 
+import Header from './components/header';
+import Footer from './components/footer';
 
 function App() {
-  const joke = useSelector(state => state.joke)
-  const dispatch = useDispatch();
-
-  const handleFetchJokes = () => {
-    dispatch(fetchJokes())
-  }
-
   return (
-    <>
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/jokes">Jokes</Link>
-            </li>
-          </ul>
-        </nav>
-        <Route exact path="/" render={() => <button onClick={handleFetchJoke}>Fetch Joke</button>} />
-        <Route exact path="/jokes" render={() => <JokeList jokes={[joke]} />} />      </div>
-    </Router>
-    </>
-  )
+    <div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/registration" element={<RegistrationForm />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/documentUpload" element={<DocumentUpload />} />
+          <Route path="/taskCheckList" element={<TaskCheckList />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
+  );
 }
 
-export default App
+export default App;
