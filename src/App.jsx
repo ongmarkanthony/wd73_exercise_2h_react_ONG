@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import RegistrationForm from './pages/registration'; 
-import Profile from './pages/profile';
+import ProfileCreation from './pages/profile';
 import DocumentUpload from './pages/documentUpload'; 
 import TaskCheckList from './pages/taskCheckList'; 
 import Header from './components/header';
@@ -14,7 +14,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/registration" element={<RegistrationForm />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<ProfileCreation/>} />
           <Route path="/documentUpload" element={<DocumentUpload />} />
           <Route path="/taskCheckList" element={<TaskCheckList />} />
         </Routes>

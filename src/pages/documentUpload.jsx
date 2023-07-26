@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const DocumentUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -10,9 +10,9 @@ const DocumentUpload = () => {
 
   const handleFileUpload = () => {
     if (selectedFile) {
-      console.log('Selected File:', selectedFile);
+      console.log("Selected File:", selectedFile);
     } else {
-      alert('Please select a file before uploading.');
+      alert("Please select a file before uploading.");
     }
   };
 
